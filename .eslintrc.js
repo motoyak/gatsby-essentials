@@ -3,10 +3,10 @@ module.exports = {
     "indent": [
       2, 2, {"SwitchCase": 1}
     ],
-    "quotes": [
-      2,
-      "single"
-    ],
+    // "quotes": [
+    //   2,
+    //   "single"
+    // ],
     "linebreak-style": [
       2,
       "unix"
