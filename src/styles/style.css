@@ -307,15 +307,27 @@ svg {
 	padding-top: 60px;
 	padding-bottom: 60px;
 	color: #fff;
-    background-image: url(/images/pattern.jpg);
+    background-image: none;
     background-size: cover;
     background-color: #477294;
+	position: relative;
 }
 
 .footer .container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
+	z-index: 10;
+}
+
+.footer .back {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
 }
 
 .footer .site {
