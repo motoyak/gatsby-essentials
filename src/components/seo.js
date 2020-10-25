@@ -2,8 +2,11 @@ import React from "react"
 import {Helmet} from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-const Seo = props=>{
-  const {pagetitle, pagedesc, pagepath, pageimg, pageimgw, pageimgh} = props;
+const Seo = (
+  {
+    pagetitle, pagedesc, pagepath,
+    pageimg, pageimgw, pageimgh, blogimg
+  })=>{
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -29,7 +32,7 @@ const Seo = props=>{
 
   const imgurl = pageimg
     ? `${data.site.siteMetadata.siteUrl}${pageimg}`
-    : `${data.site.siteMetadata.siteUrl}/thumb.jpg`
+    : blogimg || `${data.site.siteMetadata.siteUrl}/thumb.jpg`
   const imgw = pageimgw || 1280
   const imgh = pageimgh || 640
   return (
