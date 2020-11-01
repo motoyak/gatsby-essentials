@@ -80,7 +80,9 @@ const BlogpostTemplate = ({data, pageContext, location})=>(
             <ul>
               {data.contentfulBlogPost.category.map(cat=>(
                 <li key={cat.id} className={cat.categorySlug}>
-                  {cat.category}
+                  <Link to={`/cat/${cat.categorySlug}`}>
+                    {cat.category}
+                  </Link>
                 </li>
               ))}
             </ul>

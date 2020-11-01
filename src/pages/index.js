@@ -35,28 +35,34 @@ const Home=({data})=>(
         <h2 className="bar">Food <span>Essence</span></h2>
         <div className="details">
           <div className="detail">
-            <figure>
-              <Img fixed={data.fruit.childImageSharp.fixed} alt="" />
-            </figure>
-            <h3>フルーツ</h3>
-            <p>FRUIT</p>
-            <p>甘くてすっぱくておいしい果実たち。<br />旬のフルーツを満喫します。</p>
+            <Link to="/cat/fruit">
+              <figure>
+                <Img fixed={data.fruit.childImageSharp.fixed} alt="" />
+              </figure>
+              <h3>フルーツ</h3>
+              <p>FRUIT</p>
+              <p>甘くてすっぱくておいしい果実たち。<br />旬のフルーツを満喫します。</p>
+            </Link>
           </div>
           <div className="detail">
-            <figure>
-              <Img fixed={data.grain.childImageSharp.fixed} alt="" />
-            </figure>
-            <h3>穀物</h3>
-            <p>GRAIN</p>
-            <p>食事の基本となる穀物。<br />毎日の活動のエネルギー源になります。</p>
+            <Link to="/cat/grain">
+              <figure>
+                <Img fixed={data.grain.childImageSharp.fixed} alt="" />
+              </figure>
+              <h3>穀物</h3>
+              <p>GRAIN</p>
+              <p>食事の基本となる穀物。<br />毎日の活動のエネルギー源になります。</p>
+            </Link>
           </div>
           <div className="detail">
-            <figure>
-              <Img fixed={data.beverage.childImageSharp.fixed} alt="" />
-            </figure>
-            <h3>飲み物</h3>
-            <p>BEVERAGE</p>
-            <p>リラックスするのに欠かせない飲み物。<br />お気に入りの一杯はありますか？</p>
+            <Link to="/cat/beverage">
+              <figure>
+                <Img fixed={data.beverage.childImageSharp.fixed} alt="" />
+              </figure>
+              <h3>飲み物</h3>
+              <p>BEVERAGE</p>
+              <p>リラックスするのに欠かせない飲み物。<br />お気に入りの一杯はありますか？</p>
+            </Link>
           </div>
         </div>
       </div>

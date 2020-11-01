@@ -925,9 +925,14 @@ type SitePageConnection {
 }
 
 type SitePageContext {
+  currentPage: Int
   id: String
+  isFirst: Boolean
+  isLast: Boolean
+  limit: Int
   next: SitePageContextNext
   previous: SitePageContextPrevious
+  skip: Int
 }
 
 type SitePageContextNext {
@@ -1025,6 +1030,7 @@ type SitePluginPackageJsonPeerDependencies {
 
 type SitePluginPluginOptions {
   accessToken: String
+  allExtensions: Boolean
   background_color: String
   cacheDigest: String
   cache_busting_mode: String
@@ -1032,6 +1038,8 @@ type SitePluginPluginOptions {
   host: String
   icon: String
   include_favicon: Boolean
+  isTSX: Boolean
+  jsxPragma: String
   legacy: Boolean
   name: String
   path: String
@@ -2780,11 +2788,16 @@ enum SitePageFieldsEnum {
   component
   componentChunkName
   componentPath
+  context___currentPage
   context___id
+  context___isFirst
+  context___isLast
+  context___limit
   context___next___slug
   context___next___title
   context___previous___slug
   context___previous___title
+  context___skip
   id
   internalComponentName
   internal___content
@@ -2896,6 +2909,7 @@ enum SitePageFieldsEnum {
   pluginCreator___parent___parent___id
   pluginCreator___pluginFilepath
   pluginCreator___pluginOptions___accessToken
+  pluginCreator___pluginOptions___allExtensions
   pluginCreator___pluginOptions___background_color
   pluginCreator___pluginOptions___cacheDigest
   pluginCreator___pluginOptions___cache_busting_mode
@@ -2903,6 +2917,8 @@ enum SitePageFieldsEnum {
   pluginCreator___pluginOptions___host
   pluginCreator___pluginOptions___icon
   pluginCreator___pluginOptions___include_favicon
+  pluginCreator___pluginOptions___isTSX
+  pluginCreator___pluginOptions___jsxPragma
   pluginCreator___pluginOptions___legacy
   pluginCreator___pluginOptions___name
   pluginCreator___pluginOptions___path
@@ -3025,6 +3041,7 @@ enum SitePluginFieldsEnum {
   parent___parent___parent___id
   pluginFilepath
   pluginOptions___accessToken
+  pluginOptions___allExtensions
   pluginOptions___background_color
   pluginOptions___cacheDigest
   pluginOptions___cache_busting_mode
@@ -3032,6 +3049,8 @@ enum SitePluginFieldsEnum {
   pluginOptions___host
   pluginOptions___icon
   pluginOptions___include_favicon
+  pluginOptions___isTSX
+  pluginOptions___jsxPragma
   pluginOptions___legacy
   pluginOptions___name
   pluginOptions___path
@@ -3650,9 +3669,14 @@ input SiteFilterInput {
 }
 
 input SitePageContextFilterInput {
+  currentPage: IntQueryOperatorInput
   id: StringQueryOperatorInput
+  isFirst: BooleanQueryOperatorInput
+  isLast: BooleanQueryOperatorInput
+  limit: IntQueryOperatorInput
   next: SitePageContextNextFilterInput
   previous: SitePageContextPreviousFilterInput
+  skip: IntQueryOperatorInput
 }
 
 input SitePageContextNextFilterInput {
@@ -3745,6 +3769,7 @@ input SitePluginPackageJsonPeerDependenciesFilterListInput {
 
 input SitePluginPluginOptionsFilterInput {
   accessToken: StringQueryOperatorInput
+  allExtensions: BooleanQueryOperatorInput
   background_color: StringQueryOperatorInput
   cacheDigest: StringQueryOperatorInput
   cache_busting_mode: StringQueryOperatorInput
@@ -3752,6 +3777,8 @@ input SitePluginPluginOptionsFilterInput {
   host: StringQueryOperatorInput
   icon: StringQueryOperatorInput
   include_favicon: BooleanQueryOperatorInput
+  isTSX: BooleanQueryOperatorInput
+  jsxPragma: StringQueryOperatorInput
   legacy: BooleanQueryOperatorInput
   name: StringQueryOperatorInput
   path: StringQueryOperatorInput
